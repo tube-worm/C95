@@ -3,11 +3,11 @@
 
 using namespace std;
 
-agent::agent(int x, int y)
+agent::agent()
 {
     age = 0;
-    coord_x = x;
-    coord_y = y;
+    stomach = 10;
+    limit_stomach = 50;
     cout << "construct an agent!" << endl;
 }
 
@@ -30,4 +30,9 @@ void agent::move(int x_change, int y_change)
 {
     coord_x += x_change;
     coord_y += y_change;
+}
+
+void agent::eat(int food)
+{
+    stomach += food;
 }

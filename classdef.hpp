@@ -5,21 +5,22 @@ class agent
 {
 private:
     int age;
-    int coord_x;
-    int coord_y;
-    double thrsh_move;
     int limit_stomach;
     int stomach;
 
 public:
-    agent(int x, int y);
+    agent();
     virtual ~agent();
+
+    int coord_x;
+    int coord_y;
+    double thrsh_move;
 
     int getX();
     int getY();
 
     void move(int x_change, int y_change);
-    void eat();
+    void eat(int food);
 };
 #endif // _AGENT_
 
@@ -29,7 +30,7 @@ public:
 class female : public agent
 {
 public:
-    female();
+    female(int x, int y);
     virtual ~female();
 };
 #endif // _FEMALE_
