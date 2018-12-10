@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 
 #define K_PUNISH 0.3
 #define PRESENT_QUANTITY 20
@@ -6,6 +7,22 @@
 #define THRSH_MOVE_FEMALE 0.3
 #define SUCCESS_RATE_RAPER 0.3
 #define SUCCESS_RATE_GENTLE 0.5
+
+#ifndef _FIELD_
+#define _FIELD_
+
+class field
+{
+private:
+    int n=10000;
+    int m=10000;
+
+public:
+    field();
+    virtual ~field();
+    vector<vector<int>> food_vector;
+};
+#endif // _FIELD_
 
 #ifndef _AGENT_
 #define _AGENT_
@@ -54,6 +71,7 @@ public:
     male();
     virtual ~male();
     
+    void search_female();
     void make_child(string parent);
 };
 #endif // _MALE_

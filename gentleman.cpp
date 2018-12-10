@@ -20,6 +20,9 @@ void gentleman::present()
     if(stomach >= PRESENT_QUANTITY)
     {
         stomach -= PRESENT_QUANTITY;
-        make_child("gentleman");
+
+        double r = (double)rand() / RAND_MAX;
+        if(r > SUCCESS_RATE_GENTLE)
+            make_child("gentleman");
     }
 }

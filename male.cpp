@@ -15,18 +15,18 @@ male::~male()
 
 void male::search_female()
 {
-    
+
 }
 
 void male::make_child(string parent)
 {
     if(parent == "gentleman")
     {
-
+        gentleman child = gentleman(coord_x, coord_y);
     }
     else if(parent == "raper")
     {
-
+        raper child = raper(coord_x, coord_y);
     }
     else
     {

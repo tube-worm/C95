@@ -17,6 +17,8 @@ raper::~raper()
 
 void raper::rape()
 {
-    make_child("raper");
+    double r = (double)rand() / RAND_MAX;
+    if(r > SUCCESS_RATE_RAPER)
+        make_child("raper");
     cout << "RAPE!" << endl;
 }
