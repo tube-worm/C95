@@ -6,7 +6,6 @@ class agent
 private:
     int age;
     int limit_stomach;
-    int stomach;
 
 public:
     agent();
@@ -14,6 +13,7 @@ public:
 
     int coord_x;
     int coord_y;
+    int stomach;
     double thrsh_move;
 
     int getX();
@@ -44,7 +44,7 @@ private:
     double k_punish;
 
 public:
-    gentleman();
+    gentleman(int x, int y);
     virtual ~gentleman();
     void present();
 };
@@ -56,7 +56,7 @@ public:
 class raper : public agent
 {
 public:
-    raper();
+    raper(int x, int y);
     virtual ~raper();
     void rape();
 };
