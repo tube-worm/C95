@@ -6,6 +6,10 @@ using namespace std;
 int main()
 {
     agent hoge(1,2);
+    cout << hoge.getX() << hoge.getY() << endl;
+    
+    hoge.move(4, -6);
+    cout << hoge.getX() << hoge.getY() << endl;
     
     return 0;
 }

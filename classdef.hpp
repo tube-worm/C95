@@ -5,10 +5,11 @@ class agent
 {
 private:
     int age;
-    int x;
-    int y;
+    int coord_x;
+    int coord_y;
     double thrsh_move;
     int limit_stomach;
+    int stomach;
 
 public:
     agent(int x, int y);
@@ -16,9 +17,8 @@ public:
 
     int getX();
     int getY();
-    int stomach;
 
-    void move();
+    void move(int x_change, int y_change);
     void eat();
 };
 #endif // _AGENT_
