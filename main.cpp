@@ -1,8 +1,11 @@
 #include <iostream>
 #include "classdef.hpp"
 
+using namespace std;
+
 int main()
 {
-    cout << "Hello, world" << endl;
+    agent hoge(1,2);
+    
     return 0;
 }

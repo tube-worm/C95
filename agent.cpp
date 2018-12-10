@@ -11,3 +11,7 @@ agent::agent(int x, int y)
     cout << "construct an agent!" << endl;
 }
 
+agent::~agent()
+{
+    cout << "destruct an agent!" << endl;
+}
