@@ -1,3 +1,12 @@
+#include <string>
+
+#define K_PUNISH 0.3
+#define PRESENT_QUANTITY 20
+#define THRSH_MOVE_MALE 0.5
+#define THRSH_MOVE_FEMALE 0.3
+#define SUCCESS_RATE_RAPER 0.3
+#define SUCCESS_RATE_GENTLE 0.5
+
 #ifndef _AGENT_
 #define _AGENT_
 
@@ -21,6 +30,7 @@ public:
 
     void move(int x_change, int y_change);
     void eat(int food);
+    void get_old();
 };
 #endif // _AGENT_
 
@@ -35,10 +45,23 @@ public:
 };
 #endif // _FEMALE_
 
+#ifndef _MALE_
+#define _MALE_
+
+class male : public agent
+{
+public:
+    male();
+    virtual ~male();
+    
+    void make_child(string parent);
+};
+#endif // _MALE_
+
 #ifndef _GENTLEMAN_
 #define _GENTLEMAN_
 
-class gentleman : public agent
+class gentleman : public male
 {
 private:
     double k_punish;
@@ -53,7 +76,7 @@ public:
 #ifndef _RAPER_
 #define _RAPER_
 
-class raper : public agent
+class raper : public male
 {
 public:
     raper(int x, int y);

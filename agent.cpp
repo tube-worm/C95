@@ -36,3 +36,8 @@ void agent::eat(int food)
 {
     stomach += food;
 }
+
+void agent::get_old()
+{
+    age += 1;
+}

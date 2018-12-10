@@ -15,7 +15,8 @@ raper::~raper()
     cout << "raper destructer!" << endl;
 }
 
-void::rape()
+void raper::rape()
 {
+    make_child("raper");
     cout << "RAPE!" << endl;
 }

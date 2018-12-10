@@ -7,8 +7,7 @@ gentleman::gentleman(int x, int y)
 {
     coord_x = x;
     coord_y = y;
-    thrsh_move = 0.5;
-    k_punish = 0.3;
+    k_punish = K_PUNISH;
 }
 
 gentleman::~gentleman()
@@ -18,5 +17,9 @@ gentleman::~gentleman()
 
 void gentleman::present()
 {
-    stomach -= 20;
+    if(stomach >= PRESENT_QUANTITY)
+    {
+        stomach -= PRESENT_QUANTITY;
+        make_child("gentleman");
+    }
 }

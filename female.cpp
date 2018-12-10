@@ -7,7 +7,7 @@ female::female(int x, int y)
 {
     coord_x = x;
     coord_y = y;
-    thrsh_move = 0.3;
+    thrsh_move = THRSH_MOVE_FEMALE;
 }
 
 female::~female()
