@@ -7,22 +7,12 @@
 #define THRSH_MOVE_FEMALE 0.3
 #define SUCCESS_RATE_RAPER 0.3
 #define SUCCESS_RATE_GENTLE 0.5
+#define FIELD_SIZE 1000
+#define INITIAL_NUM 20
 
-#ifndef _FIELD_
-#define _FIELD_
+using namespace std;
 
-class field
-{
-private:
-    int n=10000;
-    int m=10000;
-
-public:
-    field();
-    virtual ~field();
-    vector<vector<int>> food_vector;
-};
-#endif // _FIELD_
+class field;
 
 #ifndef _AGENT_
 #define _AGENT_
@@ -57,8 +47,8 @@ public:
 class female : public agent
 {
 public:
+    female();
     female(int x, int y);
-    virtual ~female();
 };
 #endif // _FEMALE_
 
@@ -69,10 +59,9 @@ class male : public agent
 {
 public:
     male();
-    virtual ~male();
     
     void search_female();
-    void make_child(string parent);
+    void make_child(string parent, field field);
 };
 #endif // _MALE_
 
@@ -85,9 +74,9 @@ private:
     double k_punish;
 
 public:
+    gentleman();
     gentleman(int x, int y);
-    virtual ~gentleman();
-    void present();
+    void present(field field);
 };
 #endif // _GENTLEMAN_
 
@@ -97,8 +86,25 @@ public:
 class raper : public male
 {
 public:
+    raper();
     raper(int x, int y);
-    virtual ~raper();
-    void rape();
+    void rape(field field);
 };
 #endif // _RAPER_
+
+#ifndef _FIELD_
+#define _FIELD_
+
+class field
+{
+private:
+
+public:
+    field();
+    vector< vector<int> > food_vector;
+
+    vector<female> female_vector;
+    vector<gentleman> gentle_vector;
+    vector<raper> raper_vector;
+};
+#endif // _FIELD_

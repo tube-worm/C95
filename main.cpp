@@ -5,16 +5,14 @@ using namespace std;
 
 int main()
 {
-    vector<female> female_vector (20);
-    vector<gentleman> gentle_vector (10);
-    vector<raper> raper_vector(10);
+    field field;
 
-    female hoge(1,2);
-    cout << hoge.getX() << hoge.getY() << endl;
-    
-    hoge.move(4, -6);
-    cout << hoge.getX() << hoge.getY() << endl;
-    
+    for(int i= 0; i < field.female_vector.size(); i++)
+    {
+        female fe = field.female_vector[i];
+        cout << fe.getX() << "," << fe.getY() << endl;
+    }
+
     return 0;
 }
 /*

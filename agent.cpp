@@ -1,5 +1,6 @@
 #include "classdef.hpp"
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -8,12 +9,10 @@ agent::agent()
     age = 0;
     stomach = 10;
     limit_stomach = 50;
-    cout << "construct an agent!" << endl;
-}
 
-agent::~agent()
-{
-    cout << "destruct an agent!" << endl;
+    coord_x = rand() % FIELD_SIZE;
+    coord_y = rand() % FIELD_SIZE;
+    cout << "construct an agent! at"<< coord_x << "," << coord_y << endl;
 }
 
 int agent::getX()
